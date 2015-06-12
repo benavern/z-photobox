@@ -6,36 +6,133 @@
 	<title>Z-Photobox</title>
 	<link rel="stylesheet" href="css/z-grid.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="z-photobox/z-photobox.css">
+	<link rel="stylesheet" href="z-photobox/z-photobox.min.css">
 </head>
 <body>
 	<header>
-		<h1 class="align-center">
-			Z-Photobox
-		</h1>
+		<div class="container">
+			<h1 class="align-center light">
+				Z-Photobox
+			</h1>
+			<div class="z-grid">
+				<div class="z-2">
+					<div class="z-box align-center"><a href="z-photobox.zip" class="button" download>Download</a></div>
+				</div>
+				<div class="z-2">
+					<div class="z-box align-center"><a href="http://github.com/benavern/z-photobox" class="button">Github</a></div>
+				</div>
+			</div>
+		</div>
 	</header>
 	
 	<div id="content">
 		<div class="container">
 			
+			<h1>How To</h1>
+			<p>
+				This tool has only been designed to display pictures, it should work on desktop and smartphones.
+			</p>
+			<p>
+				You will have to include <a href="http://jquery.com">jQuery</a> or <a href="http://zeptojs.com">ZeptoJs</a> in your HTML file in order to make it work.
+			</p>
+			<p>
+				Two things are required :
+			</p>
+			
+			<ul>
+				<li>a link to each image you want to show with the same class. (for example <b>z-photobox</b>)</li>
+				<li>initialise the gallery with some Javascript:</li>
+			</ul>
+			
+			<pre>$(document)<span class="green">.ready</span>(function(){<br>   zPhotobox.load(<span class="red">[".z-photobox", ".z-photobox-2"]</span>);<br>});</pre>
+			
+			<ul>
+				<li>
+					<span class="green">.ready</span> : the jquery/zepto handler provides the load event for executing code when the page is fully rendered.
+				</li>
+				<li>
+					<span class="red">[".z-photobox", ".z-photobox-2"]</span> : The array of class selectors for the galleries. (each class is a different gallery)
+				</li>
+			</ul>
+			<p><i>DOM needs to be ready in order to attach a click event handler on each link with the classes provided.</i></p>
+			<hr>
+			
+			<h1>The gallery way</h1>
+			
+			<p>One of the most usual use is a gallery, made with <a href="http://labo.caradeuc.infp/z-grid">Z-GRID</a>, an extremly lightweight grid system I made.</p>
+			<p><i>(<a href="http://docs.emmet.io/cheat-sheet/">emmet</a> syntaxe)</i></p>
 			<pre>.z-grid>.z-3-f*6>a[href=http://lorempixel.com/800/600/nature/$].z-photobox>img[src=http://lorempixel.com/800/600/nature/$]</pre>
+			<p>Here, only the gallery of images with the ".z-photobox" class on their link will be in the z-photobox</p>
+			
 			<div class="z-grid">
-				<div class="z-3-f"><a href="http://lorempixel.com/800/600/nature/1" class="z-photobox"><img src="http://lorempixel.com/800/600/nature/1" alt=""></a></div>
-				<div class="z-3-f"><a href="http://lorempixel.com/800/600/nature/2" class="z-photobox"><img src="http://lorempixel.com/800/600/nature/2" alt=""></a></div>
-				<div class="z-3-f"><a href="http://lorempixel.com/800/600/nature/3" class="z-photobox"><img src="http://lorempixel.com/800/600/nature/3" alt=""></a></div>
-				<div class="z-3-f"><a href="http://lorempixel.com/800/600/nature/4" class="z-photobox"><img src="http://lorempixel.com/800/600/nature/4" alt=""></a></div>
-				<div class="z-3-f"><a href="http://lorempixel.com/800/600/nature/5" class="z-photobox"><img src="http://lorempixel.com/800/600/nature/5" alt=""></a></div>
-				<div class="z-3-f"><a href="http://lorempixel.com/800/600/nature/6" class="z-photobox"><img src="http://lorempixel.com/800/600/nature/6" alt=""></a></div>
+				<div class="z-3-f"><a href="http://lorempixel.com/800/600/nature/1" class="z-photobox">
+					<img src="http://lorempixel.com/800/600/nature/1" alt=""></a>
+				</div>
+				<div class="z-3-f"><a href="http://lorempixel.com/800/600/nature/2" class="z-photobox">
+					<img src="http://lorempixel.com/800/600/nature/2" alt=""></a>
+				</div>
+				<div class="z-3-f"><a href="http://lorempixel.com/800/600/nature/3" class="z-photobox">
+					<img src="http://lorempixel.com/800/600/nature/3" alt=""></a>
+				</div>
+				<div class="z-3-f"><a href="http://lorempixel.com/800/600/nature/4" class="z-photobox">
+					<img src="http://lorempixel.com/800/600/nature/4" alt=""></a>
+				</div>
+				<div class="z-3-f"><a href="http://lorempixel.com/800/600/nature/5" class="z-photobox">
+					<img src="http://lorempixel.com/800/600/nature/5" alt=""></a>
+				</div>
+				<div class="z-3-f"><a href="http://lorempixel.com/800/600/nature/6" class="z-photobox">
+					<img src="http://lorempixel.com/800/600/nature/6" alt=""></a>
+				</div>
 			</div>
+		
+		
+			<hr>
+			
+			<h1>The button way</h1>
+			
+			<p>
+				You can display a gallery without displaying the images. You must create a link for each picture but display only one.  
+			</p>
+			<p>For example :</p>
+			
+			<pre>a.button.z-photobox-2[href=http://lorempixel.com/800/600/cats/1]{Display the gallery!}+a.z-photobox-2[href=http://lorempixel.com/800/600/cats/1$@2][style="display:none"]*5</pre>
+			
+			<p class="align-center">
+				<a href="http://lorempixel.com/800/600/cats/1" class="button z-photobox-2">Display the gallery!</a>
+				<a href="http://lorempixel.com/800/600/cats/2" class="z-photobox-2" style="display:none;"></a>
+				<a href="http://lorempixel.com/800/600/cats/3" class="z-photobox-2" style="display:none;"></a>
+				<a href="http://lorempixel.com/800/600/cats/4" class="z-photobox-2" style="display:none;"></a>
+				<a href="http://lorempixel.com/800/600/cats/5" class="z-photobox-2" style="display:none;"></a>
+				<a href="http://lorempixel.com/800/600/cats/6" class="z-photobox-2" style="display:none;"></a>
+				<a href="http://lorempixel.com/800/600/cats/7" class="z-photobox-2" style="display:none;"></a>
+			</p>
+		
+			<hr>
+			<h1>More ...</h1>
+			<p>
+				I know that there is a ton of "lightbox" plugins on the web but I did just want something to show my pictures, very lightweight, and that I would have designed by myself...  
+			</p>
+			<p>
+				Be aware that if the images are not in your browser cache, the loading time will depend on your internet connection and the size of the image.
+				This is why it should be faster with the gallery way.
+			</p>
+			<p>
+				Please, feel free to create issues on the github repo so that I'll be aware of how I could improve it ;-)
+			</p>
+			
+			
 		</div>
 	</div>
 	
-	<footer class="align-center">
-		&copy; by <a href="http://caradeuc.info">Benjamin Caradeuc</a>
-	</footer>
 	
+	
+	<footer class="align-center">
+		<div class="container">
+			&copy; by <a href="http://caradeuc.info">Benjamin Caradeuc</a>
+		</div>
+	</footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
-	<script src="z-photobox/z-photobox.js"></script>
+	<script src="z-photobox/z-photobox.min.js"></script>
 	<script src="js/app.js"></script>
 	
 </body>

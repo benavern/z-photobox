@@ -2,12 +2,45 @@ body{
 	background: #eee;
 	color:#333;
 }
+.light{
+	font-weight: lighter;
+}
+
 
 a{
 	color:inherit;
 	text-decoration: none;
-	color:#56f;
+	color:#456;
+	font-weight:bold;
 }
+
+a.button{
+	color:#fff;
+	background: #5a4;
+	padding:0.8em 1em;
+	display:inline-block;
+	border-radius:4px;
+	box-shadow: 0 0 20px rgba(0,0,0, 0.5);
+}
+a.button:hover{
+	box-shadow:none;
+	background: #594;
+}
+
+p, li{
+	text-align:justify;
+}
+
+hr{
+	margin: 30px 0;
+	border: none;
+	background: #ccc;
+	height: 2px;
+	position: relative;
+	display: block;
+}
+
+
 pre{
 	display:block;
 	max-width:100%;
@@ -21,20 +54,32 @@ pre{
 
 header, footer{
 	background: #456;
-	padding:3em;
 	color:#fff;
 }
-
+header{
+	padding-top: 2rem;
+}
+footer{
+	padding:1.5rem 0;
+}
 footer a{
 	color: inherit;
-	font-weight: bold;
+}
+
+#content{
+	padding:1rem 0 3rem;
 }
 
 .align-center{
 	text-align:center;
 }
 
-
+.red{
+	color:#e22;
+}
+.green{
+	color:#2e2;
+}
 
 .container{
 	width:90%;
@@ -43,6 +88,9 @@ footer a{
 	margin:0 auto;
 }
 
+.z-grid{
+	margin: 1rem 0;
+}
 .z-grid > div > .z-photobox img{
 	display:block;
 	width:100%;
