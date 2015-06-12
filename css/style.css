@@ -1,0 +1,49 @@
+body{
+	background: #eee;
+	color:#333;
+}
+
+a{
+	color:inherit;
+	text-decoration: none;
+	color:#56f;
+}
+pre{
+	display:block;
+	max-width:100%;
+	background: #333;
+	color:#fff;
+	padding:0.5em 1em;
+	overflow:auto;
+	margin:1em 0;
+	border-radius: 4px;
+}
+
+header, footer{
+	background: #456;
+	padding:3em;
+	color:#fff;
+}
+
+footer a{
+	color: inherit;
+	font-weight: bold;
+}
+
+.align-center{
+	text-align:center;
+}
+
+
+
+.container{
+	width:90%;
+	max-width:1024px;
+	display:block;
+	margin:0 auto;
+}
+
+.z-grid > div > .z-photobox img{
+	display:block;
+	width:100%;
+}
