@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 keyboard shortcuts are available : 
 * <kbd><--</kbd> ==> Previous
-* <kbd>--></kbd> (or Clock on the current picture) ==> Next
+* <kbd>--></kbd> (or click on the current picture) ==> Next
 * <kbd>Esc</kbd> (or click on the Dark overlay) ==> Close
 
 
