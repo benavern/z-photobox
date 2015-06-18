@@ -23,3 +23,6 @@ keyboard shortcuts are available :
 Everything is visible [HERE](http://labo.caradeuc.info/z-photobox)
 
 ![Screenshot](/screenshot.jpg)
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/benavern/z-photobox/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
